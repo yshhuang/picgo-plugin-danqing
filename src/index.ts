@@ -1,9 +1,10 @@
-import { PicGo } from 'picgo'
-import { PluginConfig } from './models';
+import { PicGo } from "picgo"
+import { PluginConfig } from "./models";
 
 function handle(ctx: PicGo) {
   const config: PluginConfig = ctx.getConfig("picgo-plugin-danqing");
-  ctx.log.info('plugin config is: ' + JSON.stringify(config));
+  ctx.log.info("plugin config is: " + JSON.stringify(config));
+  ctx.log.info("input is" + ctx.input);
 }
 
 function pluginConfig(ctx: PicGo) {
@@ -18,9 +19,9 @@ function pluginConfig(ctx: PicGo) {
     //   required: true,
     // },
     {
-      name: 'backup_dir',
-      type: 'input',
-      message: '备份图片存储目录',
+      name: "backup_dir",
+      type: "input",
+      message: "备份图片存储目录",
       default: null,
       required: true,
     },
