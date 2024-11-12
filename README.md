@@ -1,3 +1,7 @@
-## picgo-plugin-danqing
-
-image compress, backup
+## 丹青
+PicGo和PicGo-Core图床插件
+### 功能
+1. 图片压缩
+使用magickwand.js实现，支持格式转换，自定义图片宽度
+2. 图片备份
+将压缩后的图片保存到本地文件夹，再上传图床

@@ -1,7 +1,7 @@
 {
   "name": "picgo-plugin-danqing",
   "version": "1.0.0",
-  "description": "image compress, backup",
+  "description": "PicGo和PicGo-Core图床插件",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
