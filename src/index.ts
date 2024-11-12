@@ -1,10 +1,22 @@
 import { PicGo } from "picgo"
 import { PluginConfig } from "./models";
+import ImageMagick from 'magickwand.js';
+import { fileURLToPath } from 'url';
+import * as path from 'path';
 
-function handle(ctx: PicGo) {
+const { Magick, MagickCore } = require('magickwand.js/native');
+
+async function compress(input_img: string, output_img: string) {
+  // Read a new image (synchronously)
+  let im = new Magick.Image(input_img);
+  console.log(`${input_img}: ${im.size()}`)
+}
+
+async function handle(ctx: PicGo) {
   const config: PluginConfig = ctx.getConfig("picgo-plugin-danqing");
   ctx.log.info("plugin config is: " + JSON.stringify(config));
   ctx.log.info("input is" + ctx.input);
+  await compress(ctx.input[0], config.backup_dir)
 }
 
 function pluginConfig(ctx: PicGo) {

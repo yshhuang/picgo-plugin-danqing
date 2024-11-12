@@ -38,6 +38,6 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "wasm-imagemagick": "^1.2.8"
+    "magickwand.js": "^2.0.1"
   }
 }
