@@ -25,7 +25,7 @@ export function pluginConfig(ctx: PicGo) {
             name: 'resize_geometry',
             alias: '缩放参数',
             type: 'input',
-            message: 'https://imagemagick.org/script/command-line-processing.php#geometry',
+            message: '缩放参数,详见https://imagemagick.org/script/command-line-processing.php#geometry',
             default: '1080>',
             required: true,
         },

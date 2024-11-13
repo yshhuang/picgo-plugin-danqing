@@ -1,11 +1,9 @@
 import { PicGo } from 'picgo'
 import { PluginConfig } from './models';
 import { pluginConfig } from './config';
-// import ImageMagick from 'magickwand.js';
-// import { fileURLToPath } from 'url';
+
 import * as path from 'path';
-// const path = require('path');
-const fsExtra = require('fs-extra');
+const fs = require('fs')
 
 
 const { Magick, MagickCore } = require('magickwand.js/native');
@@ -21,9 +19,7 @@ async function compress(ctx: PicGo) {
   const img_name = im.signature() + config.format;
   const date = new Date();
   const out_dir = path.join(backup_dir, year(date), month(date));
-  if (!fsExtra.existsSync(out_dir)) {
-    fsExtra.mkdirSync(out_dir);
-  }
+  fs.mkdirSync(out_dir, { recursive: true })
   const out_img = path.join(out_dir, img_name);
   console.log(`output img is ${out_img}`);
   im.write(out_img)
