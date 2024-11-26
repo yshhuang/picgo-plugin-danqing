@@ -7,13 +7,15 @@ function getChar(index: number) {
 
 export function timeuuid(): string {
     const now = new Date();
+    const ms = now.getMilliseconds();
     return getChar(now.getFullYear())
         + getChar(now.getMonth())
         + getChar(now.getDate())
         + getChar(now.getHours())
         + getChar(now.getMinutes())
         + getChar(now.getSeconds())
-        + getChar(now.getMilliseconds());
+        + getChar(Math.floor(ms / 100))
+        + getChar(ms % 100);
 }
 
 
